@@ -1,5 +1,16 @@
 title = "shellblogger configuration"
 
-[servers]
+[ssh]
+    user = "nole3668"
+    server = "polhem.it.uu.se"
+    directory = "public_html"
 
-[user]
+[site]
+    author = "Noa Lerch"
+    directory = "blog/public/"
+
+
+# default text editor
+editor = "vim"
+
+

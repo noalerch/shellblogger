@@ -1,9 +1,9 @@
-package shellblogger
+package main
 
-import "fmt"
+import (
+	"https://github.com/noalerch/shellblogger/cmd"
+)
 
 func main() {
-
-	fmt.Println("welcome to shellblogger")
-
+	cmd.Execute()
 }
