@@ -28,18 +28,11 @@ import (
 var cfgFile string
 
 var rootCmd = &cobra.Command{
-	Use:   "shbl",
+	Use:   "shblog",
 	Short: "shellblogger is a command-line blogging utility",
 	Long: `Command-line tool for blog posts, generated statically via
 Hugo and transferred to a user-specified server over SSH.`,
 	// Run: func(cmd *cobra.Command, args []string) {},
-}
-
-var hello = &cobra.Command{
-	Use: "hello",
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Hello, World!")
-	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
