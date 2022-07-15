@@ -1,4 +1,4 @@
-title = "shellblogger configuration"
+title = "shbl configuration"
 
 [ssh]
     user = "nole3668"
@@ -8,9 +8,12 @@ title = "shellblogger configuration"
 [site]
     author = "Noa Lerch"
     directory = "blog/public/"
+    theme = ""
 
 
 # default text editor
 editor = "vim"
+
+
 
 

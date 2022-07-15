@@ -8,7 +8,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "shblog",
+	Use:   "shbl",
 	Short: "Shellblogger is a command-line blogging utility",
 	Long: `Command-line tool for blog posts, generated statically via Hugo,
 			and transferred to a user-specified server over SSH.`,
