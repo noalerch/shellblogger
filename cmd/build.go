@@ -11,7 +11,7 @@ import (
 // TODO: read source and output directories from config
 // 		 do this with viper?
 var sourceDir string = "blog"
-var outputDir string = "blog/public"
+var outputDir string = "public"
 
 var buildCmd = &cobra.Command{
 	Use:   "build",
