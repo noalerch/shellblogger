@@ -16,7 +16,9 @@ var outputDir string = "public"
 var buildCmd = &cobra.Command{
 	Use:   "build",
 	Short: "Builds site locally with Hugo",
-	Long:  `build generates the static website locally with Hugo, accessed by index.html in your directory. At the moment it is equivalent to just typing hugo.`,
+	Long: `build generates the static website locally with Hugo,
+accessed by index.html in your directory.
+At the moment it is equivalent to just typing hugo.`,
 
 	// arguments: paths to site
 	// default (no args): default site as defined by config
