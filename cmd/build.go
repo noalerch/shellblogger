@@ -27,12 +27,12 @@ At the moment it is equivalent to just typing hugo.`,
 
 	// FIXME: nothing happens when using command
 	Run: func(cmd *cobra.Command, args []string) {
-		buildSite(sourceDir, outputDir)
+		BuildSite(sourceDir, outputDir)
 
 	},
 }
 
-func buildSite(source string, output string) {
+func BuildSite(source string, output string) {
 	out, err := exec.Command("hugo", "-s", sourceDir, "-d", outputDir).Output() // -s %s -d %s", source, output)
 
 	// err := command.Run()
