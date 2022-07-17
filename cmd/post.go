@@ -47,12 +47,11 @@ func post(postName string, content string, location string, editor string) {
 		fmt.Printf("Error %s while looking up path for %s", editorPath, editor)
 	}
 
-	// editorOutput := exec.Command(editor, content+"/"+newPostLocation)
-	edit := exec.Command(editorPath)
+	edit := exec.Command(editorPath, content+"/"+newPostLocation+".md")
+	// edit := exec.Command("vim") //editorPath)
 	edit.Stdin = os.Stdin
 	edit.Stdout = os.Stdout
-	edit.Stderr = os.Stderr
-	err = edit.Start()
+	err = edit.Run()
 
 	out, err = edit.Output()
 
