@@ -26,11 +26,11 @@ In this program it is primarily directed at the build contents of a site`,
 		remote := composeSSHDestination(user, server, destination)
 		println(local)
 		println(remote)
-		deploy(local, remote)
+		DeploySite(local, remote)
 	},
 }
 
-func deploy(local string, remote string) {
+func DeploySite(local string, remote string) {
 	cmd := exec.Command("scp", "-pr", local, remote)
 	// out, err := exec.Command("scp", "-r", "blog/public/*", "nole3668@polhem.it.uu.se:public_html/blog/").Output()
 

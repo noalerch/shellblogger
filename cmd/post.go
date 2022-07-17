@@ -14,6 +14,8 @@ var content string = "blog/content"
 var location string = "posts"
 var editor string = "vim"
 
+var deployNow bool
+
 // postCmd represents the post command
 var postCmd = &cobra.Command{
 	Use:   "post",
@@ -58,18 +60,18 @@ func post(postName string, content string, location string, editor string) {
 	}
 
 	fmt.Println(string(out))
+
+	if deployNow {
+		// TODO: less hardcoded, more configured
+		BuildSite(sourceDir, outputDir)
+		DeploySite(local, composeSSHDestination(user, server, destination))
+		// FIXME: does not seem to deploy? maybe wrong dir?
+
+	}
+
 }
 
 func init() {
 	rootCmd.AddCommand(postCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// postCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// postCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	postCmd.Flags().BoolP("deploy", "d", false, "Immediately deploy post on exit")
 }
