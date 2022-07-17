@@ -53,8 +53,6 @@ func post(postName string, content string, location string, editor string) {
 	edit.Stdout = os.Stdout
 	err = edit.Run()
 
-	out, err = edit.Output()
-
 	if err != nil {
 		log.Fatal(err)
 	}
