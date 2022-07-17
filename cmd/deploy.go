@@ -10,7 +10,7 @@ import (
 
 ////////// temporary placeholders before i fix args and config
 // deploys whole public dir right now
-var local = "blog/public/"
+var local = "blog/public/."
 var user = "nole3668"
 var server = "polhem.it.uu.se"
 var destination = "public_html/blog/"
@@ -31,7 +31,7 @@ In this program it is primarily directed at the build contents of a site`,
 }
 
 func deploy(local string, remote string) {
-	cmd := exec.Command("scp", "-r", local, remote)
+	cmd := exec.Command("scp", "-pr", local, remote)
 	// out, err := exec.Command("scp", "-r", "blog/public/*", "nole3668@polhem.it.uu.se:public_html/blog/").Output()
 
 	var out bytes.Buffer
